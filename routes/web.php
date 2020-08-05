@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+$router->get('/', 'NimbusController@hello');
+$router->get('hello', 'NimbusController@hello');
+
+$router->any('login', 'NimbusController@login');
+$router->any('list', 'NimbusController@list');
+$router->any('get', 'NimbusController@get');
+$router->any('store', 'NimbusController@store');
+$router->any('logout', 'NimbusController@logout');
